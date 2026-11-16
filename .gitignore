@@ -1,0 +1,11 @@
+node_modules/
+web/dist/
+test-results/
+playwright-report/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.egg-info/
+# encrypted identity files stay on the machine that created them
+*.pqid

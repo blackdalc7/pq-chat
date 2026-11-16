@@ -1,0 +1,49 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-void font-sans text-zinc-300 antialiased;
+    /* Two faint light sources so the glass panels have something to blur. */
+    background-image:
+      radial-gradient(60rem 32rem at 85% -10%, rgba(0, 229, 255, 0.07), transparent 60%),
+      radial-gradient(48rem 28rem at -5% 105%, rgba(179, 136, 255, 0.06), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-cyan/25 text-white;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-1 ring-cyan/70;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl;
+  }
+
+  .label {
+    @apply text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500;
+  }
+
+  .hash {
+    @apply break-all font-mono text-[11px] leading-relaxed;
+  }
+}

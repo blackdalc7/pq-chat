@@ -1,0 +1,17 @@
+[project]
+name = "pqchat"
+version = "1.0.0"
+description = "Serverless end-to-end encrypted chat with a hybrid post-quantum handshake and ratchet"
+requires-python = ">=3.11"
+dependencies = ["cryptography>=50.0", "aiohttp>=3.10"]
+
+[project.scripts]
+pqchat = "pqchat.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+line-length = 120
